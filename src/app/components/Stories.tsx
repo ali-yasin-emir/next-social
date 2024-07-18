@@ -3,7 +3,7 @@ import Story from "./Story";
 
 const Stories = () => {
   return (
-    <div className="flex space-x-7 mx-12 px-6 shadow-lg rounded-lg overflow-x-scroll">
+    <div className="bg-slate-100 flex justify-evenly items-center gap-12 px-6 shadow-lg rounded-lg overflow-x-scroll">
       <AddStory />
       <Story />
       <Story />

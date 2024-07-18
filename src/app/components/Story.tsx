@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Story = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-1/6">
+    <div className="cursor-pointer flex flex-col justify-center items-center w-1/6">
       <div className="relative w-20 h-20 rounded-full flex-shrink-0">
         <Image
           fill
