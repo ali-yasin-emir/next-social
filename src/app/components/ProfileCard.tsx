@@ -11,7 +11,7 @@ const ProfileCard = () => {
           className="object-cover rounded-lg"
         />
       </div>
-      <div className="top-[85px] 2xl:left-28 lg:left-20 md:left-16 z-10 w-14 h-14 rounded-full absolute border-white border-[1px] shadow-md  ">
+      <div className="top-[85px] 2xl:left-[72px] xl:left-16 lg:left-14 md:left-16 z-10 w-14 h-14 rounded-full absolute border-white border-[1px] shadow-md  ">
         <Image
           fill
           src="/pp.jpg"

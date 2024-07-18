@@ -3,7 +3,7 @@ import ProfileCard from "./ProfileCard";
 
 const Left = () => {
   return (
-    <div className="w-[20%] flex flex-col">
+    <div className="w-[15%] hidden flex-col md:flex">
       <ProfileCard />
       <LeftMenu />
     </div>
