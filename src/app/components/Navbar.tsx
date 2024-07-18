@@ -42,7 +42,7 @@ const Navbar = () => {
               name=""
               id=""
               placeholder="Search..."
-              className="px-2 py-1 w-full bg-transparent outline-none bg-slate-100 rounded-lg"
+              className="px-2 py-1 w-full outline-none bg-slate-100 rounded-lg"
             />
             <span className="absolute right-2 top-1 cursor-pointer text-lg md:text-md">
               🔎
