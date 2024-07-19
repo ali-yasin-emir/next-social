@@ -6,7 +6,7 @@ const Post = () => {
       <div className="flex w-full gap-6 h-[8%]">
         <div className="relative w-16 h-16 rounded-full">
           <Image
-            fill    
+            fill
             src="/pp2.jpg"
             alt="pp"
             className="aspect-square object-cover rounded-full"
