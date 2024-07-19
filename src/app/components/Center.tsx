@@ -4,7 +4,7 @@ import Stories from "./Stories";
 
 const Center = () => {
   return (
-    <div className="w-[40%] bg-red-400 mx-16">
+    <div className="w-[40%] mx-16">
       <Stories />
       <AddPost />
       <Post />

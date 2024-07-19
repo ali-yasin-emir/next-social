@@ -11,7 +11,7 @@ const ProfileCard = () => {
           className="object-cover rounded-lg"
         />
       </div>
-      <div className="top-[85px] 2xl:left-[72px] xl:left-16 lg:left-14 md:left-16 z-10 w-14 h-14 rounded-full absolute border-white border-[1px] shadow-md  ">
+      <div className="top-[82px] 2xl:left-[118px] xl:left-[94px] lg:left-[72px] md:left-[64px] z-10 w-14 h-14 rounded-full absolute border-white border-[1px] shadow-md">
         <Image
           fill
           src="/pp.jpg"
@@ -29,7 +29,7 @@ const ProfileCard = () => {
           </div>
           <span className="text-slate-400">1M followers</span>
         </div>
-        <button className="w-fit px-2 py-1 bg-blue-500 text-white outline-none border-none rounded-lg">
+        <button className="w-fit p-2 bg-blue-500 text-white outline-none border-none rounded-lg">
           My Profile
         </button>
       </div>

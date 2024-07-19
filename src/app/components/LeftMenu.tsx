@@ -16,8 +16,8 @@ const menuItems = [
 
 const LeftMenu = () => {
   return (
-    <div className="rounded-lg flex flex-col pt-6 pb-4 shadow-lg px-8">
-      <div className="flex flex-col gap-8">
+    <div className="rounded-lg flex flex-col p-4 shadow-lg px-8">
+      <div className="flex flex-col gap-[20px]">
         {menuItems.map((item, index) => (
           <Link
             className="flex gap-4 items-center"
