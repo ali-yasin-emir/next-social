@@ -4,7 +4,7 @@ import Right from "./components/Right";
 
 const Homepage = () => {
   return (
-    <div className="flex w-full pt-12">
+    <div className="flex w-full pt-12 pb-48">
       <Left />
       <Center />
       <Right />
