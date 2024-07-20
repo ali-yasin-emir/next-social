@@ -7,16 +7,17 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-200 h-24 flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+    <nav className="flex h-24 items-center justify-between bg-slate-200 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
       <div className="w-[20%]">
         <Link href="/">
           <h1 className="text-xl tracking-wider text-blue-400">REACTUX</h1>
         </Link>
       </div>
-      <div className="w-[60%] hidden md:block">
+      <div className="hidden w-[60%] md:block">
         <ul className="flex items-center space-x-4">
           <Link href="/">
             <li className="flex gap-[4.5px]">
@@ -36,23 +37,24 @@ const Navbar = () => {
               <span>Stories</span>
             </li>
           </Link>
-          <div className="relative 2xl:ps-24 xl:ps-16 lg:ps-12 lg:block 2xl:w-[500px]">
+          <div className="relative lg:block lg:ps-12 xl:ps-16 2xl:w-[500px] 2xl:ps-24">
             <input
               type="search"
+              
               name=""
               id=""
               placeholder="Search..."
-              className="px-2 py-1 w-full outline-none bg-slate-100 rounded-lg"
+              className="w-full rounded-lg bg-slate-100 px-2 py-1 outline-none"
             />
-            <span className="absolute right-2 top-1 cursor-pointer text-lg md:text-md">
-              🔎
+            <span className="md:text-md absolute right-2 top-1 flex cursor-pointer text-lg">
+              <Image src="/search.png" alt="search" width={20} height={20} />
             </span>
           </div>
         </ul>
       </div>
 
-      <div className="w-[20%] flex justify-end items-center">
-        <ul className="space-x-3 hidden md:flex">
+      <div className="flex w-[20%] items-center justify-end">
+        <ul className="hidden space-x-3 md:flex">
           <SignedIn>
             <li className="text-xl">👩‍👧‍👦</li>
             <li className="text-xl">🗯️</li>

@@ -1,14 +1,23 @@
-import Center from "./components/Center";
+import { SignedIn } from "@clerk/nextjs";
+import AddPost from "./components/AddPost";
 import Left from "./components/Left";
+import Post from "./components/Post";
 import Right from "./components/Right";
+import Stories from "./components/Stories";
 
 const Homepage = () => {
   return (
-    <div className="flex w-full pt-8 pb-48">
-      <Left />
-      <Center />
-      <Right />
-    </div>
+    <SignedIn>
+      <div className="flex w-full justify-between">
+        <Left />
+        <div className="flex w-full flex-col md:w-[40%]">
+          <Stories />
+          <AddPost />
+          <Post />
+        </div>
+        <Right />
+      </div>
+    </SignedIn>
   );
 };
 

@@ -16,11 +16,11 @@ const menuItems = [
 
 const LeftMenu = () => {
   return (
-    <div className="rounded-lg flex flex-col p-4 shadow-lg px-8">
+    <div className="flex flex-col rounded-lg p-4 px-8 shadow-lg">
       <div className="flex flex-col gap-[20px]">
         {menuItems.map((item, index) => (
           <Link
-            className="flex gap-4 items-center"
+            className="flex items-center gap-4"
             href={"/" + item.link}
             key={index}
           >

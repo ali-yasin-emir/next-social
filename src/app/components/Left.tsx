@@ -4,7 +4,7 @@ import SponsoredAdds from "./SponsoredAdds";
 
 const Left = () => {
   return (
-    <div className="w-[25%] hidden flex-col md:flex gap-8">
+    <div className="hidden w-[20%] flex-col gap-8 md:flex">
       <ProfileCard />
       <LeftMenu />
       <SponsoredAdds />

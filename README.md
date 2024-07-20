@@ -3,4 +3,5 @@
 ## TODO
 
 - [x] Implement Navbar
-- [ ] Clerk Auth
+- [x] Clerk Auth
+- [ ] Design UI

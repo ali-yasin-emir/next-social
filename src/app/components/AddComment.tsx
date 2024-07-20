@@ -10,18 +10,18 @@ const AddComment = () => {
           height={42}
           src="/pp2.jpg"
           alt="pp"
-          className="aspect-square object-cover rounded-full"
+          className="aspect-square rounded-full object-cover"
         />
       </div>
       <div className="w-[80%]">
         <textarea
           name="comment"
           id="comment"
-          className="w-full p-4 shadow-md bg-slate-50 rounded-lg resize-none outline-none focus:border-0"
+          className="w-full resize-none rounded-lg bg-slate-50 p-4 shadow-md outline-none focus:border-0"
           placeholder="Write a comment..."
         />
       </div>
-      <div className="cursor-pointer flex justify-center text-xl w-[10%]">
+      <div className="flex w-[10%] cursor-pointer justify-center text-xl">
         😉
       </div>
     </div>

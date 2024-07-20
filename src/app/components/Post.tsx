@@ -4,31 +4,31 @@ import Comments from "./Comments";
 
 const Post = () => {
   return (
-    <div className="gap-4 p-6 bg-slate-100 shadow-lg rounded-lg w-full h-[840px] mt-8 flex flex-col justify-between">
-      <div className="flex w-full gap-6 h-[8%]">
-        <div className="relative w-16 h-16 rounded-full">
+    <div className="mt-8 flex h-[1080px] w-full flex-col justify-between gap-4 rounded-lg bg-slate-100 p-6 shadow-lg">
+      <div className="flex h-[8%] w-full gap-6">
+        <div className="relative h-16 w-16 rounded-full">
           <Image
             fill
             src="/pp2.jpg"
             alt="pp"
-            className="aspect-square object-cover rounded-full"
+            className="aspect-square rounded-full object-cover"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center gap-[2.4px]">
           <span className="font-semibold text-black">Yasin</span>
-          <span className="text-sm text-slate-400">1 day ago</span>
+          <span className="text-xs text-slate-400">1 day ago</span>
         </div>
       </div>
-      <div className="flex relative w-full h-[60%]">
-        <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black"></div>
+      <div className="relative flex h-[60%] w-full">
+        <div className="absolute left-0 top-0 h-full w-full rounded-lg bg-black"></div>
         <Image
           fill
           src="/post3.jpg"
           alt="post"
-          className="object-contain rounded-lg z-10"
+          className="z-10 rounded-lg object-contain"
         />
       </div>
-      <div className="flex w-full h-[12%]">
+      <div className="flex h-[12%] w-full">
         <p className="text-justify leading-6">
           Witnessed the incredible Heavy Falcon launch today! 🚀 The power and
           precision of this technology are truly awe-inspiring. Here’s to
@@ -39,15 +39,15 @@ const Post = () => {
           </span>
         </p>
       </div>
-      <div className="flex flex-col h-auto gap-6">
-        <div className="flex justify-between items-center px-2 text-slate-500">
+      <div className="flex h-auto flex-col gap-6">
+        <div className="flex items-center justify-between px-2 text-slate-500">
           <div className="flex gap-8">
-            <div className="flex justify-between items-center gap-2">
+            <div className="flex items-center justify-between gap-2">
               <Image src="/like.png" alt="like" width={20} height={20} />
               <span className="text-slate-300">|</span>
               <span>61 Likes</span>
             </div>
-            <div className="flex justify-between items-center gap-2">
+            <div className="flex items-center justify-between gap-2">
               <Image src="/comment.png" alt="comment" width={20} height={20} />
               <span className="text-slate-300">|</span>
               <span>0 Comments</span>

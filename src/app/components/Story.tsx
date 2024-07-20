@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const Story = () => {
   return (
-    <div className="cursor-pointer flex flex-col justify-center items-center w-1/6">
-      <div className="relative w-20 h-20 rounded-full flex-shrink-0">
+    <div className="flex w-1/6 cursor-pointer flex-col items-center justify-center">
+      <div className="relative h-20 w-20 flex-shrink-0 rounded-full">
         <Image
           fill
           src="/pp.jpg"
           alt="story"
-          className="aspect-square object-cover rounded-full"
+          className="aspect-square rounded-full object-cover"
         />
       </div>
       <span className="text-center text-xs">Add a Story</span>

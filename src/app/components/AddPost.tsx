@@ -2,47 +2,49 @@ import Image from "next/image";
 
 const AddPost = () => {
   return (
-    <div className="rounded-lg shadow-lg bg-slate-100 mt-9 items-center p-6 gap-0">
+    <div className="mt-9 items-center gap-0 rounded-lg bg-slate-100 p-6 shadow-lg">
       <div className="flex justify-between">
-        <div className="relative w-16 h-16 rounded-full">
-          <Image
-            fill
-            src="/pp.jpg"
-            alt="pp"
-            className="aspect-square object-cover rounded-full"
-          />
+        <div className="w-[20%] md:w-[20%]">
+          <div className="relative h-16 w-16 rounded-full">
+            <Image
+              fill
+              src="/pp.jpg"
+              alt="pp"
+              className="aspect-square rounded-full object-cover"
+            />
+          </div>
         </div>
-        <div className="flex flex-col w-[70%]">
+        <div className="flex w-[65%] md:w-[70%] flex-col">
           <textarea
             placeholder="What's on your mind?"
-            className="focus-within:shadow-lg resize-none bg-gray-100 p-4 placeholder:text-sm w-full h-24 rounded-lg outline-none"
+            className="h-24 w-full resize-none rounded-lg bg-gray-100 p-4 outline-none placeholder:text-sm focus-within:shadow-lg"
             name="post"
             id="post"
             cols={30}
             rows={10}
           />
-          <div className="flex gap-4 text-sm tracking-wider text-slate-500 pt-4">
-            <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex gap-4 pt-4 text-xs md:text-sm tracking-wider text-slate-500">
+            <div className="flex cursor-pointer items-center gap-2">
               <Image src="/addimage.png" alt="image" width={20} height={20} />
               <span>Photo</span>
             </div>
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex cursor-pointer items-center gap-2">
               <Image src="/addVideo.png" alt="image" width={20} height={20} />
               <span>Video</span>
             </div>
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex cursor-pointer items-center gap-2">
               <Image src="/poll.png" alt="image" width={20} height={20} />
               <span>Poll</span>
             </div>
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex cursor-pointer items-center gap-2">
               <Image src="/events.png" alt="image" width={20} height={20} />
               <span>Event</span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-[10%] gap-3">
-          <span className="cursor-pointer flex items-start text-lg">😉</span>
-          <button className="bg-blue-500 text-white p-2 rounded-lg">
+        <div className="flex w-[15%] md:w-[10%] flex-col gap-3">
+          <span className="flex cursor-pointer items-start text-lg">😉</span>
+          <button className="md:text-md rounded-lg bg-blue-500 p-2 text-sm text-white">
             Post
           </button>
         </div>

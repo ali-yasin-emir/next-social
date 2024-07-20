@@ -1,25 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProfileCard = () => {
   return (
-    <div className="relative w-full flex flex-col justify-between h-64 rounded-lg shadow-lg">
-      <div className="relative h-[45%] flex rounded-lg">
+    <div className="relative flex h-64 w-full flex-col justify-between rounded-lg shadow-lg">
+      <div className="relative flex h-[40%] rounded-lg">
         <Image
           fill
           src="/leftImage.jpg"
           alt="profile-img"
-          className="object-cover rounded-lg"
+          className="rounded-lg object-cover"
         />
       </div>
-      <div className="top-[82px] 2xl:left-[118px] xl:left-[94px] lg:left-[72px] md:left-[64px] z-10 w-14 h-14 rounded-full absolute border-white border-[1px] shadow-md">
-        <Image
-          fill
-          src="/pp.jpg"
-          alt="profile-img"
-          className="object-cover rounded-full aspect-square"
-        />
+      <div className="absolute left-1/2 top-[38%] z-10 h-14 w-14 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-[1px] border-white shadow-md">
+        <Link href="/profile/123">
+          <Image
+            fill
+            src="/pp.jpg"
+            alt="profile-img"
+            className="aspect-square rounded-full object-cover"
+          />
+        </Link>
       </div>
-      <div className="flex flex-col h-[55%] gap-4 items-center justify-end py-2 text-sm">
+      <div className="flex h-[60%] flex-col items-center justify-end gap-4 py-2 text-sm">
         <h1 className="font-semibold">Kim Sun-Woo</h1>
         <div className="flex gap-4">
           <div className="flex">
@@ -27,11 +30,14 @@ const ProfileCard = () => {
             <div>⭐</div>
             <div>⭐</div>
           </div>
-          <span className="text-slate-400">1M followers</span>
+          <span className="text-slate-400">512 followers</span>
         </div>
-        <button className="w-fit p-2 bg-blue-500 text-white outline-none border-none rounded-lg">
+        <Link
+          href="/profile/123"
+          className="w-fit rounded-lg border-none bg-blue-500 p-2 text-white outline-none"
+        >
           My Profile
-        </button>
+        </Link>
       </div>
     </div>
   );

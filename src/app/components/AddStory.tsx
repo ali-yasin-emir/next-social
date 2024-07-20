@@ -2,20 +2,20 @@ import Image from "next/image";
 
 const AddStory = () => {
   return (
-    <div className="cursor-pointer flex flex-col justify-center items-center">
-      <div className="relative w-20 h-20 rounded-full">
+    <div className="flex cursor-pointer flex-col items-center justify-center">
+      <div className="relative h-20 w-20 rounded-full">
         <Image
           fill
           src="/pp.jpg"
           alt="story"
-          className="aspect-square object-cover rounded-full brightness-[0.6] drop-shadow-xl"
+          className="aspect-square rounded-full object-cover brightness-[0.6] drop-shadow-xl"
         />
-        <div className="w-[42px] h-[42px] absolute top-5 left-5">
+        <div className="absolute left-5 top-5 h-[42px] w-[42px]">
           <Image
             fill
             src="/stories.png"
             alt="story"
-            className="z-10 aspect-square object-cover rounded-full brightness-[1.5]"
+            className="z-10 aspect-square rounded-full object-cover brightness-[1.5]"
           />
         </div>
       </div>

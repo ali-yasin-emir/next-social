@@ -10,22 +10,22 @@ const MobileNav = () => {
     <>
       <ul
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex flex-col gap-1 md:hidden cursor-pointer"
+        className="flex cursor-pointer flex-col gap-1 md:hidden"
       >
         <li
-          className={`bg-blue-500 w-6 h-1 origin-left ease-in-out duration-500 ${
+          className={`h-1 w-6 origin-left bg-blue-500 duration-500 ease-in-out ${
             isOpen && "rotate-45"
           }`}
         ></li>
-        <li className={`bg-blue-500 w-6 h-1 ${isOpen && "opacity-0"}`}></li>
+        <li className={`h-1 w-6 bg-blue-500 ${isOpen && "opacity-0"}`}></li>
         <li
-          className={`bg-blue-500 w-6 h-1 origin-left ease-in-out duration-500 ${
+          className={`h-1 w-6 origin-left bg-blue-500 duration-500 ease-in-out ${
             isOpen && "-rotate-45"
           }`}
         ></li>
       </ul>
       {isOpen && (
-        <div className="z-10 absolute left-0 top-24 w-full flex flex-col items-center justify-center px-4 h-[calc(100vh-96px)] gap-8 text-lg bg-slate-200">
+        <div className="absolute left-0 top-24 z-20 flex h-[calc(100vh-96px)] w-full flex-col items-center justify-center gap-8 overflow-hidden bg-slate-200 px-4 text-lg">
           <Link href="/">Home</Link>
           <Link href="/friends">Friends</Link>
           <Link href="/groups">Groups</Link>

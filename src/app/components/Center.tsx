@@ -4,7 +4,7 @@ import Stories from "./Stories";
 
 const Center = () => {
   return (
-    <div className="w-[40%] mx-16">
+    <div className="mx-16 w-[40%]">
       <Stories />
       <AddPost />
       <Post />
