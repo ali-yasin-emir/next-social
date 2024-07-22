@@ -10,21 +10,29 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.2.4",
-    "babel-plugin-react-compiler": "^0.0.0-experimental-938cd9a-20240601",
+    "@next/env": "^14.2.5",
+    "@prisma/client": "^5.17.0",
+    "@vercel/postgres": "^0.9.0",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-696af53-20240625",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.32.0",
     "next": "15.0.0-rc.0",
+    "node-gyp": "^10.2.0",
+    "prisma": "^5.17.0",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "drizzle-kit": "^0.23.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "15.0.0-rc.0",
-    "postcss": "^8",
+    "postcss": "^8.4.39",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5.5.3"
   }
 }
