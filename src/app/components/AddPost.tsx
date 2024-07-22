@@ -1,8 +1,6 @@
-import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 
 const AddPost = () => {
-  const { userId } = auth();
 
   return (
     <div className="mt-9 items-center gap-0 rounded-lg bg-slate-100 p-6 shadow-lg">
