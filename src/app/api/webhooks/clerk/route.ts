@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       return new Response("Failed to create the user!", { status: 500 });
     }
   }
-  
+
   if (eventType === "user.updated") {
     try {
       await prisma.user.update({
