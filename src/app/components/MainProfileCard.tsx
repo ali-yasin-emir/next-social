@@ -1,7 +1,6 @@
-import { User } from "@prisma/client";
 import Image from "next/image";
 
-const MainProfileCard = async ({ user }: { user: User }) => {
+const MainProfileCard = async ({ user }: { user: any }) => {
   return (
     <div className="relative flex h-[520px] flex-col justify-between rounded-lg">
       <div className="relative h-1/2">

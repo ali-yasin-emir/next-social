@@ -1,11 +1,12 @@
-"use client";
-
+import prisma from "@/lib/client";
+import { auth } from "@clerk/nextjs/server";
 import { User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { useState } from "react";
 
-const UserInformation = ({ user }: { user: User }) => {
+const UserInformation = async ({ user }: { user: User }) => {
   const [follow, setFollow] = useState("Follow");
   const [block, setBlock] = useState("Block User");
 
@@ -16,6 +17,43 @@ const UserInformation = ({ user }: { user: User }) => {
     month: "long",
     day: "numeric",
   });
+
+  const { userId: currentUserId } = auth();
+
+  let isUserBlocked = false;
+  let isFollowing = false;
+  let isFollowingSent = false;
+
+  if (currentUserId) {
+    const blockRes = await prisma.block.findFirst({
+      where: {
+        blockedId: user.id,
+        blockerId: currentUserId,
+      },
+    });
+
+    blockRes ? (isUserBlocked = true) : (isUserBlocked = false);
+
+    const followReqRes = await prisma.followRequest.findFirst({
+      where: {
+        senderId: currentUserId,
+        receiverId: user.id,
+      },
+    });
+
+    followReqRes ? (isFollowingSent = true) : (isFollowingSent = false);
+
+    const followRes = await prisma.follower.findFirst({
+      where: {
+        followerId: currentUserId,
+        followingId: user.id,
+      },
+    });
+
+    followRes ? (isFollowing = true) : (isFollowing = false);
+  } else {
+    return notFound();
+  }
 
   return (
     <div className="flex flex-col gap-4 rounded-lg bg-slate-100 p-4 shadow-lg">
