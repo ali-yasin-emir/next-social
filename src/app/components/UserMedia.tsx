@@ -1,6 +1,7 @@
+import { User } from "@prisma/client";
 import Image from "next/image";
 
-const UserMedia = () => {
+const UserMedia = ({ user }: { user: User }) => {
   return (
     <div className="flex h-fit flex-col gap-4 rounded-lg bg-slate-100 p-4 shadow-lg">
       <div className="flex h-1/6 items-center justify-between">

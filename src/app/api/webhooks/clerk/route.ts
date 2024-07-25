@@ -53,8 +53,6 @@ export async function POST(req: Request) {
   // For this guide, you simply log the payload to the console
   const { id } = evt.data;
   const eventType = evt.type;
-  console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
-  console.log("Webhook body:", body);
 
   if (eventType === "user.created") {
     try {
@@ -66,6 +64,7 @@ export async function POST(req: Request) {
           cover: "/noCover.png",
         },
       });
+
       return new Response("User has been created!", { status: 200 });
     } catch (err) {
       console.log(err);
@@ -91,5 +90,5 @@ export async function POST(req: Request) {
     }
   }
 
-  return new Response("", { status: 200 });
+  return new Response("Webhooks received", { status: 200 });
 }
