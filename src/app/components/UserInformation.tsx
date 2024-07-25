@@ -4,12 +4,8 @@ import { User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { useState } from "react";
 
 const UserInformation = async ({ user }: { user: User }) => {
-  const [follow, setFollow] = useState("Follow");
-  const [block, setBlock] = useState("Block User");
-
   const createdAtDate = new Date(user.createdAt);
 
   const formattedDate = createdAtDate.toLocaleDateString("tr-TR", {
@@ -116,31 +112,11 @@ const UserInformation = async ({ user }: { user: User }) => {
           <span className="text-sm text-slate-600">Joined {formattedDate}</span>
         </div>
       </div>
-      <button
-        onClick={() => {
-          if (follow === "Follow") {
-            setFollow("Following Request Sent!");
-          } else {
-            setFollow("Follow");
-          }
-        }}
-        className="flex w-full items-center justify-center rounded-lg border-0 bg-blue-600 py-2 text-sm text-white outline-none"
-      >
-        {follow}
+      <button className="flex w-full items-center justify-center rounded-lg border-0 bg-blue-600 py-2 text-sm text-white outline-none">
+        Follow
       </button>
       <div className="flex justify-end">
-        <span
-          onClick={() => {
-            if (block === "Block User") {
-              setBlock("Unblock User");
-            } else {
-              setBlock("Block User");
-            }
-          }}
-          className="cursor-pointer text-sm text-red-600"
-        >
-          {block}
-        </span>
+        <span className="cursor-pointer text-sm text-red-600">Block</span>
       </div>
     </div>
   );
