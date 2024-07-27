@@ -4,6 +4,7 @@ import { User } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import UserInformationInteraction from "./UserInformationInteraction";
 
 const UserInformation = async ({ user }: { user: User }) => {
   const createdAtDate = new Date(user.createdAt);
@@ -112,12 +113,13 @@ const UserInformation = async ({ user }: { user: User }) => {
           <span className="text-sm text-slate-600">Joined {formattedDate}</span>
         </div>
       </div>
-      <button className="flex w-full items-center justify-center rounded-lg border-0 bg-blue-600 py-2 text-sm text-white outline-none">
-        Follow
-      </button>
-      <div className="flex justify-end">
-        <span className="cursor-pointer text-sm text-red-600">Block</span>
-      </div>
+      <UserInformationInteraction
+        userId={user.id}
+        currentUserId={currentUserId}
+        isUserBlocked={isUserBlocked}
+        isFollowing={isFollowing}
+        isFollowingSent={isFollowingSent}
+      />
     </div>
   );
 };
