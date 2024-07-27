@@ -1,6 +1,6 @@
 "use client";
 
-import { switchFollow } from "@/lib/actions";
+import { switchBlock, switchFollow } from "@/lib/actions";
 import { useOptimistic, useState } from "react";
 
 const UserInformationInteraction = ({
@@ -23,7 +23,7 @@ const UserInformationInteraction = ({
   });
 
   const follow = async () => {
-    switchOptimisticFollow("");
+    switchOptimisticState("follow");
 
     try {
       await switchFollow(userId);
@@ -41,32 +41,56 @@ const UserInformationInteraction = ({
     }
   };
 
-  const [optimisticFollow, switchOptimisticFollow] = useOptimistic(
+  const [optimisticState, switchOptimisticState] = useOptimistic(
     userState,
-    (prevState) => ({
-      ...prevState,
-      following: prevState.following && false,
-      followingRequestSent:
-        !prevState.following && !prevState.followingRequestSent ? true : false,
-    }),
+    (prevState, value: "follow" | "block") =>
+      value === "follow"
+        ? {
+            ...prevState,
+            following: prevState.following && false,
+            followingRequestSent:
+              !prevState.following && !prevState.followingRequestSent
+                ? true
+                : false,
+          }
+        : {
+            ...prevState,
+            blocked: !prevState.blocked,
+          },
   );
+
+  const block = async () => {
+    switchOptimisticState("block");
+
+    try {
+      await switchBlock(userId);
+
+      setUserState((prevState) => ({
+        ...prevState,
+        blocked: !prevState.blocked,
+      }));
+    } catch (error) {
+      console.log(error);
+      throw new Error("An error occurred while switching block status.");
+    }
+  };
 
   return (
     <>
       <form action={follow}>
         <button className="flex w-full items-center justify-center rounded-lg border-0 bg-blue-600 py-2 text-sm text-white outline-none">
-          {optimisticFollow.following
+          {optimisticState.following
             ? "Following"
-            : optimisticFollow.followingRequestSent
+            : optimisticState.followingRequestSent
               ? "Friend Request Sent"
               : "Follow"}
         </button>
       </form>
-      <form>
+      <form action={block}>
         <div className="flex justify-end">
-          <span className="cursor-pointer text-sm text-red-600">
-            {optimisticFollow.blocked ? "Unblock User" : "Block User"}
-          </span>
+          <button className="cursor-pointer text-sm text-red-600">
+            {optimisticState.blocked ? "Unblock User" : "Block User"}
+          </button>
         </div>
       </form>
     </>

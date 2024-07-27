@@ -53,3 +53,36 @@ export const switchFollow = async (userId: string) => {
   }
 };
 
+export const switchBlock = async (userId: string) => {
+  const { userId: currentUserId } = auth();
+
+  try {
+    if (!currentUserId) {
+      throw new Error("You must be logged in to perform this action.");
+    }
+
+    const existingBlock = await prisma.block.findFirst({
+      where: {
+        blockerId: currentUserId,
+        blockedId: userId,
+      },
+    });
+
+    if (existingBlock) {
+      await prisma.block.delete({
+        where: {
+          id: existingBlock.id,
+        },
+      });
+    } else {
+      await prisma.block.create({
+        data: {
+          blockerId: currentUserId,
+          blockedId: userId,
+        },
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
