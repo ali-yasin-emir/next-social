@@ -71,15 +71,16 @@ const UserInformation = async ({ user }: { user: User }) => {
         )}
       </div>
       <div className="flex flex-col gap-4 text-sm font-light text-slate-400">
-        <div className="flex gap-2">
-          <Image src="/map.png" alt="location" width={20} height={20} />
-          {user.city && (
+        {user.city && (
+          <div className="flex gap-2">
+            <Image src="/map.png" alt="location" width={20} height={20} />
+
             <p className="item-center flex gap-[4.2px]">
               <span>Living in</span>
               <span className="font-bold text-blue-400">{user.city}</span>
             </p>
-          )}
-        </div>
+          </div>
+        )}
         {user.school && (
           <div className="flex gap-2">
             <Image src="/school.png" alt="school" width={20} height={20} />
@@ -113,13 +114,14 @@ const UserInformation = async ({ user }: { user: User }) => {
           <span className="text-sm text-slate-600">Joined {formattedDate}</span>
         </div>
       </div>
-      <UserInformationInteraction
-        userId={user.id}
-        currentUserId={currentUserId}
-        isUserBlocked={isUserBlocked}
-        isFollowing={isFollowing}
-        isFollowingSent={isFollowingSent}
-      />
+      {currentUserId && currentUserId !== user.id && (
+        <UserInformationInteraction
+          userId={user.id}
+          isUserBlocked={isUserBlocked}
+          isFollowing={isFollowing}
+          isFollowingSent={isFollowingSent}
+        />
+      )}
     </div>
   );
 };
